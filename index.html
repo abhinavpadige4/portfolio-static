@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css">
+    <link rel="stylesheet" href="styles.css">
+    <script defer src="script.js"></script>
+</head>
+<body class="bg-background text-text">
+    <header class="hero-section bg-primary text-surface py-lg px-md flex flex-col items-center justify-center min-h-screen">
+        <h1 class="text-4xl md:text-6xl font-heading mb-md">Welcome to My Portfolio</h1>
+        <p class="text-lg md:text-xl max-w-2xl text-center mb-lg">Discover my projects, skills, and how to get in touch.</p>
+        <a href="#projects" class="cta-button bg-secondary text-surface px-lg py-md rounded-full transition-colors duration-300 hover:bg-primary">View Projects</a>
+    </header>
+    <section id="projects" class="projects-section py-lg px-md">
+        <h2 class="section-title text-3xl md:text-4xl font-heading mb-md">Projects</h2>
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-md">
+            <article class="project-card bg-surface p-md rounded-lg shadow-md">
+                <h3 class="project-title text-xl font-heading mb-sm">Project One</h3>
+                <p class="project-description text-md">A brief description of the project, highlighting key features and technologies used.</p>
+            </article>
+            <article class="project-card bg-surface p-md rounded-lg shadow-md">
+                <h3 class="project-title text-xl font-heading mb-sm">Project Two</h3>
+                <p class="project-description text-md">Another project description, detailing its purpose and achievements.</p>
+            </article>
+        </div>
+    </section>
+    <section id="skills" class="skills-section py-lg px-md bg-surface">
+        <h2 class="section-title text-3xl md:text-4xl font-heading mb-md">Skills</h2>
+        <ul class="skills-list flex flex-wrap gap-md">
+            <li class="skill-item bg-primary text-surface px-md py-sm rounded-full">HTML</li>
+            <li class="skill-item bg-primary text-surface px-md py-sm rounded-full">CSS</li>
+            <li class="skill-item bg-primary text-surface px-md py-sm rounded-full">JavaScript</li>
+            <li class="skill-item bg-primary text-surface px-md py-sm rounded-full">Tailwind CSS</li>
+        </ul>
+    </section>
+    <section id="contact" class="contact-section py-lg px-md">
+        <h2 class="section-title text-3xl md:text-4xl font-heading mb-md">Contact</h2>
+        <form id="contact-form" class="contact-form flex flex-col gap-md">
+            <label for="name" class="form-label">Name</label>
+            <input type="text" id="name" name="name" class="form-input bg-surface text-text px-md py-sm rounded-md border border-muted focus:border-primary outline-none" required>
+            <label for="email" class="form-label">Email</label>
+            <input type="email" id="email" name="email" class="form-input bg-surface text-text px-md py-sm rounded-md border border-muted focus:border-primary outline-none" required>
+            <label for="message" class="form-label">Message</label>
+            <textarea id="message" name="message" rows="4" class="form-input bg-surface text-text px-md py-sm rounded-md border border-muted focus:border-primary outline-none" required></textarea>
+            <button type="submit" class="cta-button bg-secondary text-surface px-md py-md rounded-full transition-colors duration-300 hover:bg-primary">Send Message</button>
+            <p id="form-feedback" class="form-feedback text-sm text-red-500 hidden"></p>
+        </form>
+    </section>
+    <footer class="footer bg-primary text-surface py-md px-md text-center">
+        <p>&copy; 2023 Your Name. All rights reserved.</p>
+    </footer>
+</body>
+</html>
