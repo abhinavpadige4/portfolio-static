@@ -4,53 +4,94 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Portfolio</title>
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css">
-    <link rel="stylesheet" href="styles.css">
-    <script defer src="script.js"></script>
+    <link rel="stylesheet" href="css/base.css">
+    <link rel="stylesheet" href="css/layout.css">
+    <link rel="stylesheet" href="css/components.css">
+    <script defer src="js/main.js"></script>
 </head>
-<body class="bg-background text-text">
-    <header class="hero-section bg-primary text-surface py-lg px-md flex flex-col items-center justify-center min-h-screen">
-        <h1 class="text-4xl md:text-6xl font-heading mb-md">Welcome to My Portfolio</h1>
-        <p class="text-lg md:text-xl max-w-2xl text-center mb-lg">Discover my projects, skills, and how to get in touch.</p>
-        <a href="#projects" class="cta-button bg-secondary text-surface px-lg py-md rounded-full transition-colors duration-300 hover:bg-primary">View Projects</a>
+<body>
+    <header class="bg-background">
+        <nav class="container flex justify-between items-center py-lg">
+            <h1 class="text-primary text-xl">My Portfolio</h1>
+            <button id="menu-toggle" aria-label="Toggle Menu" class="md:hidden">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"/>
+                </svg>
+            </button>
+            <ul id="menu" class="hidden md:flex space-x-md">
+                <li><a href="#hero" class="text-text hover:text-primary">Home</a></li>
+                <li><a href="#about" class="text-text hover:text-primary">About</a></li>
+                <li><a href="#skills" class="text-text hover:text-primary">Skills</a></li>
+                <li><a href="#projects" class="text-text hover:text-primary">Projects</a></li>
+                <li><a href="#contact" class="text-text hover:text-primary">Contact</a></li>
+            </ul>
+        </nav>
     </header>
-    <section id="projects" class="projects-section py-lg px-md">
-        <h2 class="section-title text-3xl md:text-4xl font-heading mb-md">Projects</h2>
-        <div class="grid grid-cols-1 md:grid-cols-2 gap-md">
-            <article class="project-card bg-surface p-md rounded-lg shadow-md">
-                <h3 class="project-title text-xl font-heading mb-sm">Project One</h3>
-                <p class="project-description text-md">A brief description of the project, highlighting key features and technologies used.</p>
-            </article>
-            <article class="project-card bg-surface p-md rounded-lg shadow-md">
-                <h3 class="project-title text-xl font-heading mb-sm">Project Two</h3>
-                <p class="project-description text-md">Another project description, detailing its purpose and achievements.</p>
-            </article>
-        </div>
-    </section>
-    <section id="skills" class="skills-section py-lg px-md bg-surface">
-        <h2 class="section-title text-3xl md:text-4xl font-heading mb-md">Skills</h2>
-        <ul class="skills-list flex flex-wrap gap-md">
-            <li class="skill-item bg-primary text-surface px-md py-sm rounded-full">HTML</li>
-            <li class="skill-item bg-primary text-surface px-md py-sm rounded-full">CSS</li>
-            <li class="skill-item bg-primary text-surface px-md py-sm rounded-full">JavaScript</li>
-            <li class="skill-item bg-primary text-surface px-md py-sm rounded-full">Tailwind CSS</li>
-        </ul>
-    </section>
-    <section id="contact" class="contact-section py-lg px-md">
-        <h2 class="section-title text-3xl md:text-4xl font-heading mb-md">Contact</h2>
-        <form id="contact-form" class="contact-form flex flex-col gap-md">
-            <label for="name" class="form-label">Name</label>
-            <input type="text" id="name" name="name" class="form-input bg-surface text-text px-md py-sm rounded-md border border-muted focus:border-primary outline-none" required>
-            <label for="email" class="form-label">Email</label>
-            <input type="email" id="email" name="email" class="form-input bg-surface text-text px-md py-sm rounded-md border border-muted focus:border-primary outline-none" required>
-            <label for="message" class="form-label">Message</label>
-            <textarea id="message" name="message" rows="4" class="form-input bg-surface text-text px-md py-sm rounded-md border border-muted focus:border-primary outline-none" required></textarea>
-            <button type="submit" class="cta-button bg-secondary text-surface px-md py-md rounded-full transition-colors duration-300 hover:bg-primary">Send Message</button>
-            <p id="form-feedback" class="form-feedback text-sm text-red-500 hidden"></p>
-        </form>
-    </section>
-    <footer class="footer bg-primary text-surface py-md px-md text-center">
-        <p>&copy; 2023 Your Name. All rights reserved.</p>
+    <main>
+        <section id="hero" class="bg-primary text-background py-xl">
+            <div class="container text-center">
+                <h2 class="text-4xl mb-md">Welcome to My Portfolio</h2>
+                <p class="text-lg mb-lg">Discover my work and expertise in web development.</p>
+                <a href="#contact" class="btn">Get in Touch</a>
+            </div>
+        </section>
+        <section id="about" class="py-xl">
+            <div class="container">
+                <h2 class="text-3xl mb-md">About Me</h2>
+                <p class="text-text mb-lg">I am a passionate web developer with over 5 years of experience in crafting beautiful and functional websites. I specialize in front-end development and have a strong background in JavaScript frameworks like React and Vue.</p>
+            </div>
+        </section>
+        <section id="skills" class="bg-surface py-xl">
+            <div class="container">
+                <h2 class="text-3xl mb-md">Skills</h2>
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-lg">
+                    <div class="card">
+                        <h3 class="text-xl mb-sm">HTML/CSS</h3>
+                        <p class="text-text">Expertise in semantic HTML and modern CSS practices.</p>
+                    </div>
+                    <div class="card">
+                        <h3 class="text-xl mb-sm">JavaScript</h3>
+                        <p class="text-text">Proficient in vanilla JS and popular frameworks.</p>
+                    </div>
+                    <div class="card">
+                        <h3 class="text-xl mb-sm">Responsive Design</h3>
+                        <p class="text-text">Creating layouts that work on all devices.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section id="projects" class="py-xl">
+            <div class="container">
+                <h2 class="text-3xl mb-md">Projects</h2>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-lg">
+                    <div class="card">
+                        <h3 class="text-xl mb-sm">E-commerce Site</h3>
+                        <p class="text-text">A fully functional e-commerce platform built with React and Node.js.</p>
+                    </div>
+                    <div class="card">
+                        <h3 class="text-xl mb-sm">Personal Blog</h3>
+                        <p class="text-text">A simple blog application using Vue.js and Firebase.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section id="contact" class="bg-primary text-background py-xl">
+            <div class="container">
+                <h2 class="text-3xl mb-md">Contact</h2>
+                <form id="contact-form" class="flex flex-col">
+                    <label for="name" class="mb-sm">Name</label>
+                    <input type="text" id="name" name="name" required class="mb-md">
+                    <label for="email" class="mb-sm">Email</label>
+                    <input type="email" id="email" name="email" required class="mb-md">
+                    <label for="message" class="mb-sm">Message</label>
+                    <textarea id="message" name="message" rows="4" required class="mb-md"></textarea>
+                    <button type="submit" class="btn">Send Message</button>
+                </form>
+            </div>
+        </section>
+    </main>
+    <footer class="bg-background py-lg text-center">
+        <p class="text-text">&copy; 2023 My Portfolio. All rights reserved.</p>
     </footer>
 </body>
 </html>
